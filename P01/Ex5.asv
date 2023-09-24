@@ -1,0 +1,26 @@
+disp(estimar_probabilidade(0.5, 15, 6, 1e5)*100);
+probabilidade_1 = estimar_probabilidade(0.5, 15, 6,1e5);
+disp(estimar_probabilidade(0.5, 20, 6, 1e5)*100);
+probabilidade_2 = estimar_probabilidade(0.5, 20, 6,1e5);
+disp(estimar_probabilidade(0.5, 40, 6, 1e5)*100);
+probabilidade_3 = estimar_probabilidade(0.5, 40, 6,1e5);
+disp(estimar_probabilidade(0.5, 100, 6, 1e5)*100);
+probabilidade_4 = estimar_probabilidade(0.5, 100, 6,1e5);
+
+% Crie os gráficos usando stem
+stem(15, , probabilidade_1*100);
+xlabel('Número de Lançamentos');
+ylabel('Probabilidade (%)');
+title('Probabilidade nº1');
+
+stem(, probabilidade_1*100);
+xlabel('Número de Lançamentos');
+ylabel('Probabilidade (%)');
+title('Probabilidade nº1');
+
+function probabilidade = estimar_probabilidade(p, numero_lancamentos, numero_caras, numero_experiencias)
+    lancamentos = rand(numero_lancamentos,numero_experiencias) > p;
+    sucessos= sum(lancamentos)== numero_caras;
+    probabilidade = sum(sucessos)/ numero_experiencias;
+end
+

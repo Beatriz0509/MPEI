@@ -1,0 +1,20 @@
+sair_15_caras = estimar_probabilidade(0.5, 15, 15, 1e5);
+sair_5_caras = estimar_probabilidade(0.5, 5, 15, 1e5);
+disp(sair_15_caras*100);
+disp(sair_5_caras*100);
+
+
+disp(['A probabilidade de obter pelo menos 6 caras em 15 lancamentos é ', num2str((sair_15_caras-sair_5_caras)*100), '%' ])
+
+function probabilidade = estimar_probabilidade(p, numero_lancamentos, numero_caras, numero_experiencias)
+    lancamentos = rand(numero_lancamentos,numero_experiencias) > p;
+    sucessos= sum(lancamentos)== numero_caras;
+    probabilidade = sum(sucessos)/ numero_experiencias;
+end
+
+function probabilidade = calcularProbabilidade(prob_cara, numero_caras, numero_lancamentos, numero_experiencias)
+    lancamentos = rand(numero_lancamentos,numero_experiencias) > prob_cara;
+    sucessos= sum(lancamentos)==numero_caras;
+    probabilidade = sum(sucessos)/numero_experiencias;
+end
+
