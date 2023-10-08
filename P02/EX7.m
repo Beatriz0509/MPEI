@@ -19,12 +19,12 @@ prob_andre_dado_erro_serio = (prob_erro_andre * prob_andre) / (prob_erro_andre *
 prob_bruno_dado_erro_serio = (prob_erro_bruno * prob_bruno) / (prob_erro_andre * prob_andre + prob_erro_bruno * prob_bruno + prob_erro_carlos * prob_carlos);
 prob_carlos_dado_erro_serio = (prob_erro_carlos * prob_carlos) / (prob_erro_andre * prob_andre + prob_erro_bruno * prob_bruno + prob_erro_carlos * prob_carlos);
 
-% Exibir os resultados
+% Exibir os resultados 7.a)
 fprintf('Probabilidade de o programa ser do Andre dado erro sério: %.4f\n', prob_andre_dado_erro_serio*100);
 fprintf('Probabilidade de o programa ser do Bruno dado erro sério: %.4f\n', prob_bruno_dado_erro_serio*100);
 fprintf('Probabilidade de o programa ser do Carlos dado erro sério: %.4f\n', prob_carlos_dado_erro_serio*100);
 
-% Verificar quem é mais provável
+% Verificar quem é mais provável 7.b)
 [~, indice_max] = max([prob_andre_dado_erro_serio, prob_bruno_dado_erro_serio, prob_carlos_dado_erro_serio]);
 programadores = {'Andre', 'Bruno', 'Carlos'};
 fprintf('É mais provável que o programa seja do %s.\n', programadores{indice_max});
