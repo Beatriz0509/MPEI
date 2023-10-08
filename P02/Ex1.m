@@ -4,7 +4,7 @@ sair_pelo_menos_1_rapaz = 1 - estimar_probabilidade(0.5, 2, 0, 1e5); % ex1_a
 disp(num2str(sair_pelo_menos_1_rapaz*100))
 
 sair_pelo_menos_1_rapaz_(1) = nchoosek(2, 0)*0.5^0*(1-0.5)^(2-0); % ex1_b
-disp(num2str(sair_pelo_menos_1_rapaz*100))
+disp(num2str(sair_pelo_menos_1_rapaz(1)*100))
 
 ex1_c_simulada = estimar_probabilidade(0.5, 3, 1, 1e5); % ex1_c
 disp(num2str(ex1_c_simulada*100))
