@@ -46,9 +46,6 @@ fprintf('Probabilidade de B: %.4f\n', prob_B*100);
 fprintf('Probabilidade de C: %.4f\n', prob_C*100);
 fprintf('Probabilidade de D: %.4f\n', prob_D*100);
 
-% Lançamento do dado 2 vezes
-num_experimentos = 100000;
-
 % Inicializar contadores para cada evento
 cont_A_intersecao_B = 0;
 cont_C_intersecao_D = 0;
