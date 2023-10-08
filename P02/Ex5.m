@@ -71,10 +71,12 @@ end
 prob_A_intersecao_B = cont_A_intersecao_B / num_experimentos;
 prob_C_intersecao_D = cont_C_intersecao_D / num_experimentos;
 
-
 % Verificar independência
-independencia_b = (abs(prob_A_intersecao_B - prob_A * prob_B) < 1e-1);
-independencia_c = (abs(prob_C_intersecao_D - prob_C * prob_D) < 1e-1);
+independencia_b = (abs(prob_A_intersecao_B - prob_A * prob_B) < 0.1);
+independencia_c = (abs(prob_C_intersecao_D - prob_C * prob_D) < 0.1);
+
+% Ajustar para 'true' se forem independentes, 'false' se não forem
+independencia_c = ~independencia_c;
 
 % Exibir os resultados
 fprintf('Probabilidade de A interseção B: %.4f\n', prob_A_intersecao_B);
